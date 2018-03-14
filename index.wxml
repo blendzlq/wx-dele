@@ -1,0 +1,20 @@
+<!--pages/history/index.wxml-->
+<view class="box-list">
+  <view class="list" wx:for="{{lists}}" wx:for-index="i" wx:key="*this">
+      <view class='content-inner' bindtouchstart='catchStart' bindtouchmove='catchMove' bindtouchend='catchEnd' data-id="{{i}}" animation="{{animationList[i]}}">
+       <view class='product'>
+        <image src="https://oupinego.com/Public/upload/{{item.picpath}}"></image>
+      </view>
+      <view class="right" style='margin-left:30rpx'>
+        <view class="text">{{item.product_title}}</view>
+        <view class="spe">
+          X{{item.buys}}
+        </view>
+        <text class="price">￥{{item.price}}</text>
+      </view>
+    </view>
+     <view class='delete' data-pid="{{item.pid}}" catchtap='dele'  id='{{i==0?"delete":""}}'>
+      <image src='/image/user/dele.png'></image>
+    </view> 
+  </view>
+</view>
